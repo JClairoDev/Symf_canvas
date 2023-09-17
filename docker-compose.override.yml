@@ -8,7 +8,11 @@ services:
 ###< doctrine/doctrine-bundle ###
 
 ###> symfony/mailer ###
-  mailer:
-    image: schickling/mailcatcher
-    ports: ["1025", "1080"]
+  maildev:
+    image: maildev/maildev
+    container_name: maildev
+    command: bin/maildev --hide-extensions STARTTLS
+    ports:
+      - "1080:1080"
+      - "1025:1025"
 ###< symfony/mailer ###
