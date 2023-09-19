@@ -13,7 +13,15 @@
         {{ form_errors(registrationForm) }}
 
         {{ form_start(registrationForm, {'attr': {'class': 'form-group'}}) }}
+
+        {{ form_row(registrationForm.name, {'attr':{'class': 'form-control'}}) }}
+
+        {{ form_row(registrationForm.lastname, {'attr':{'class': 'form-control'}}) }}
+
+        {{ form_row(registrationForm.avatar, {'attr': {'class': 'form-control'}}) }}
+
         {{ form_row(registrationForm.email, {'attr':{'class': 'form-control'}}) }}
+
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password',
             'attr':{'class': 'form-control'}
@@ -21,6 +29,9 @@
 
 
         <button type="submit" class="btn btn-primary margin-btn">S'enregistrer</button>
+
         {{ form_end(registrationForm) }}
+
     </section>
+
 {% endblock %}
