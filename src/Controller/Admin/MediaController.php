@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Media;
 use App\Form\MediaType;
@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/media')]
+#[Route('/admin/media')]
 class MediaController extends AbstractController
 {
     #[Route('/', name: 'app_media_index', methods: ['GET'])]
