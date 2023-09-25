@@ -15,7 +15,6 @@ class MediaType extends AbstractType
             ->add('photo')
             ->add('video')
             ->add('content')
-            ->add('userId')
         ;
     }
 
