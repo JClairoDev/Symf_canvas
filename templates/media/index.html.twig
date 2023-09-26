@@ -19,7 +19,7 @@
         {% for medium in media %}
             <tr>
                 <td>{{ medium.id }}</td>
-                <td>{{ medium.photo }}</td>
+                <td><img src="{{ asset('uploads/'~medium.photo) }}" alt=""></td>
                 <td>{{ medium.video }}</td>
                 <td>{{ medium.content }}</td>
                 <td>

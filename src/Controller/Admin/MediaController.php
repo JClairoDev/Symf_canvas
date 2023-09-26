@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Media;
 use App\Form\MediaType;
 use App\Repository\MediaRepository;
+use App\Service\FileUploader;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,15 +24,30 @@ class MediaController extends AbstractController
     }
 
     #[Route('/new', name: 'app_media_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, FileUploader $fileUploader, MediaRepository $mediaRepository): Response
     {
         $medium = new Media();
         $form = $this->createForm(MediaType::class, $medium);
         $form->handleRequest($request);
 
+        $photo=$form->get('photo')->getData();
+        $video=$form->get('video')->getData();
+
+
+
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($medium);
-            $entityManager->flush();
+
+                if ($photo) {
+                    $fileName = $fileUploader->upload($photo);
+                    $medium->setPhoto($fileName);
+                    $medium->setVideo($video);
+                    $mediaRepository->save($medium, true);
+                } else if ($form->get('removeImage')->getData()) {
+                    $media=new Media();
+                    unlink($this->getParameter('uploads_path') . '/' . $media->getPhoto());
+                    $media->setPhoto(null);
+                }
+
 
             return $this->redirectToRoute('app_media_index', [], Response::HTTP_SEE_OTHER);
         }
