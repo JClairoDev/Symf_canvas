@@ -1,4 +1,10 @@
-<div>
-    <img src="{{ asset('uploads/'~media.photo) }}" alt="image de l'article" class="img-thumbnail">
-    <p>{{ media.content }}</p>
+<div class="text-center article-wrap shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <div class="row justify-content-between">
+        <div class="col-2">
+            <img src="{{ asset('uploads/'~media.photo) }}" alt="image de l'article" class="img-thumbnail">
+        </div>
+        <div class="col-6">
+            <p>{{ media.content }}</p>
+        </div>
+    </div>
 </div>
