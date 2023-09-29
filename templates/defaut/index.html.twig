@@ -47,4 +47,9 @@
             </div>
         </div>
     </div>
+
+    {% for media in medias %}
+        {% include 'article/_article.html.twig' %}
+    {% endfor %}
+
 {% endblock %}
