@@ -8,3 +8,16 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/style.scss';
 import 'bootstrap/scss/bootstrap.scss';
+
+
+let button = document.querySelector('button');
+let collapseOne = document.querySelector('#collapseOne');
+
+button.addEventListener("click", function(){
+    if(collapseOne.classList.contains('show')){
+        collapseOne.classList.remove('show');
+    }else{
+        button.classList.add('collapsed');
+        collapseOne.classList.add('show');
+    }
+})
