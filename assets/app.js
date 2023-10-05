@@ -10,7 +10,7 @@ import './styles/style.scss';
 import 'bootstrap/scss/bootstrap.scss';
 
 
-let button = document.querySelector('button');
+/*let button = document.querySelector('button');
 let collapseOne = document.querySelector('#collapseOne');
 
 button.addEventListener("click", function(){
@@ -20,4 +20,12 @@ button.addEventListener("click", function(){
         button.classList.add('collapsed');
         collapseOne.classList.add('show');
     }
-})
+})*/
+
+//importer Collapse JS depuis bootstrap pour l'accordeon
+
+    import { Collapse } from 'bootstrap/dist/js/bootstrap.esm'
+
+
+    Array.from(document.querySelectorAll('.accordion-collapse'))
+    .forEach(collapse => new Collapse(collapse))

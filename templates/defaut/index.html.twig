@@ -43,27 +43,52 @@
             </div>
         </div>
     </div>
-<div class="container">
-    {% for media in medias %}
-        {% include 'article/_article.html.twig' %}
-    {% endfor %}
-</div>
 
     <div class="container">
-        <div class="accordion" id="myAccordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading-one">
-                    <button class="accordion-button collapsed" type="button" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">bouton test js</button>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#myAccordion" style="">
-                        <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
-                </h2>
+             {% for media in medias %}
+                 {% include 'article/_article.html.twig' %}
+             {% endfor %}
+    </div>
+<div class="container">
+
+    <div
+            class="accordion accordion-flush"
+            id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                >
+                    Accordion item 1
+                </button>
+            </h2>
+            <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample"
+            >
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Accusamus asperiores, at atque autem distinctio dolor ducimus est,
+                    hic in maxime molestiae mollitia, numquam omnis placeat quia
+                    recusandae repellendus totam vero!
+                </p>
+
+
             </div>
         </div>
-
     </div>
+</div>
+
+
+
 
 
 {% endblock %}
