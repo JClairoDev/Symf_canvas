@@ -9,6 +9,7 @@
 import './styles/style.scss';
 import 'bootstrap/scss/bootstrap.scss';
 
+// Test Vanilla JS
 
 /*let button = document.querySelector('button');
 let collapseOne = document.querySelector('#collapseOne');
