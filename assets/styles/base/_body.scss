@@ -6,3 +6,16 @@ body {
   --bs-accordion-bg: white;
 }
 
+.container{
+  .card{
+    margin-bottom: 2rem;
+  }
+}
+
+.carousel-item{
+  img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+}

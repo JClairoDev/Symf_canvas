@@ -26,7 +26,15 @@ button.addEventListener("click", function(){
 //importer Collapse JS depuis bootstrap pour l'accordeon
 
     import { Collapse } from 'bootstrap/dist/js/bootstrap.esm'
-
-
     Array.from(document.querySelectorAll('.accordion-collapse'))
     .forEach(collapse => new Collapse(collapse))
+
+
+//initialisation du carousel
+
+const myCarouselElement = document.querySelector('#myCarousel')
+
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+    interval: 2000,
+    touch: false
+})
