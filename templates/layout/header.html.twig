@@ -18,17 +18,22 @@
         </div>#}
 
         <a href="{{ path('app_homepage') }}" class="navbar-brand">
-            <img src="{{ asset('images/logo3.png') }}" alt="">
+            <img src="{{ asset('images/logo4.png') }}" alt="">
             JClairoDev
         </a>
         <div class="d-inline-flex justify-content-end gap-5">
-        <a href="{{ path('app_register') }}">register</a>
+     {#   <a href="{{ path('app_register') }}">register</a>
         {% if app.user and is_granted('ROLE_ADMIN') %}
                 <a href="{{ path('app_media_index') }}">Back-office</a>
                 <a href="{{ path('app_logout') }}">logout</a>
         {% else %}
             <a href="{{ path('app_login') }}">login</a>
-        {% endif %}
+        {% endif %}#}
+                <p>
+                    Bonjour ! Je m'appelle Julien.
+                    <br>
+                    Je suis développeur.
+                </p>
         </div>
     </nav>
 </header>
